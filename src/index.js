@@ -5,7 +5,7 @@ import FastClick from 'fastclick';
 import configureStore from './store';
 import Routes from './routers';
 import './utils/setRem';
-import './base.css';
+import './style/base.css';
 import registerServiceWorker from './registerServiceWorker';
 
 const store = configureStore();

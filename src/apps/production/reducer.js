@@ -17,7 +17,7 @@ let defaultState = {
   dataList: [],
 }
 
-export const proData = (state = defaultState, action) => {
+  const proData = (state = defaultState, action) => {
   let imuDataList;
   let imuItem;
   switch(action.type){
@@ -54,3 +54,5 @@ export const proData = (state = defaultState, action) => {
       return state;
   }
 }
+
+export default proData;

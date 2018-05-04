@@ -13,7 +13,7 @@ const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const px2rem = require('postcss-px2rem');//--增加rem
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir) //--增加resolve函数，得出目录的路径
 }
 
@@ -38,6 +38,7 @@ module.exports = {
   // This means they will be the "root" imports that are included in JS bundle.
   // The first two entry points enable "hot" CSS and auto-refreshes for JS.
   entry: [
+	'babel-polyfill',//--增加babel-poly
     // We ship a few polyfills by default:
     require.resolve('./polyfills'),
     // Include an alternative client for WebpackDevServer. A client's job is to
@@ -89,12 +90,12 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-      
+
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
-	  '@':resolve('src'),//--为了以后import组件方便，将src目录取别名为@
-	  
+      '@': resolve('src'),//--为了以后import组件方便，将src目录取别名为@
+
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -122,7 +123,7 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
-              
+
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -151,11 +152,13 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
-              cacheDirectory: true,
+			    babelrc: true,//--增加
+                presets: [require.resolve('babel-preset-react-app')],//--增加
+                cacheDirectory: true,
+			    plugins: ["transform-decorators-legacy"],//--增加
             },
           },
           // "postcss" loader applies autoprefixer to our CSS.
@@ -164,7 +167,7 @@ module.exports = {
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
           {
-            test: /\.css|less$/, //--增加less
+            test: /\.(css|less)$/, //--增加less
             use: [
               require.resolve('style-loader'),
               {
@@ -190,13 +193,13 @@ module.exports = {
                       ],
                       flexbox: 'no-2009',
                     }),
-					px2rem({remUnit: 75})//--增加px2rem 设计稿根据750px(iphone6)
+                    px2rem({ remUnit: 75 })//--增加px2rem 设计稿根据750px(iphone6)
                   ],
                 },
               },
-			  {
-				loader: require.resolve('less-loader') //--增加less-loader
-			  }
+              {
+                loader: require.resolve('less-loader') //--增加less-loader
+              }
             ],
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.

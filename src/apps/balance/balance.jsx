@@ -6,26 +6,29 @@ import PublicAlert from '@/components/alert/alert';
 import API from '@/api/api';
 import './balance.css';
 
-class BrokeRage extends Component{
-  state = {
-    applyNum: '', //输入值
-    alertStatus: false, //弹框状态
-    alertTip: '', //弹框提示文字
-    balance: {  //可提现金额
-      balance: 0, 
-    },
-  }
+class BrokeRage extends Component {
+
+    state = {
+      applyNum: '', //输入值
+      alertStatus: false, //弹框状态
+      alertTip: '', //弹框提示文字
+      balance: {  //可提现金额
+        balance: 0,
+      },
+    }
+  
+
   // 初始化数据
   initData = async () => {
-    try{
+    try {
       let result = await API.getBalance();
       console.log(result);
-      this.setState({balance: result});
-    }catch(err){
+      this.setState({ balance: result });
+    } catch (err) {
       console.error(err);
     }
   }
-  
+
   /**
    * 格式化输入数据
    * 格式为微信红包格式：最大 200.00
@@ -33,31 +36,31 @@ class BrokeRage extends Component{
    */
   handleInput = event => {
     let value = event.target.value;
-    if((/^\d*?\.?\d{0,2}?$/gi).test(value)){
-      if((/^0+[1-9]+/).test(value)) {
-        value = value.replace(/^0+/,'');
+    if ((/^\d*?\.?\d{0,2}?$/gi).test(value)) {
+      if ((/^0+[1-9]+/).test(value)) {
+        value = value.replace(/^0+/, '');
       }
-      if((/^0{2}\./).test(value)) {
-        value = value.replace(/^0+/,'0');
+      if ((/^0{2}\./).test(value)) {
+        value = value.replace(/^0+/, '0');
       }
-      value = value.replace(/^\./gi,'0.');
-      if(parseFloat(value) > 200){
+      value = value.replace(/^\./gi, '0.');
+      if (parseFloat(value) > 200) {
         value = '200.00';
       }
-      this.setState({applyNum: value});
+      this.setState({ applyNum: value });
     }
   }
-  
+
   /**
    * 提交判断条件
    */
   sumitForm = () => {
     let alertTip;
-    if(!this.state.applyNum){
+    if (!this.state.applyNum) {
       alertTip = '请输入提现金额';
-    }else if(parseFloat(this.state.applyNum) > this.state.balance.balance){
+    } else if (parseFloat(this.state.applyNum) > this.state.balance.balance) {
       alertTip = '申请提现金额不能大于余额';
-    }else{
+    } else {
       alertTip = '申请提现成功';
     }
 
@@ -66,7 +69,7 @@ class BrokeRage extends Component{
       alertTip,
     })
   }
-  
+
   /*
   关闭弹框
    */
@@ -78,14 +81,14 @@ class BrokeRage extends Component{
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state),fromJS(nextState))
+    return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState))
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.initData();
   }
 
-  render(){
+  render() {
     return (
       <main className="home-container">
         <PublicHeader title='提现' record />
