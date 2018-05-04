@@ -61,7 +61,7 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: shouldUseSourceMap ? 'source-map' : false,
   // In production, we only want to load the polyfills and the app code.
-  entry: ['babel-polyfill',require.resolve('./polyfills'), paths.appIndexJs],
+  entry: ['babel-polyfill', require.resolve('./polyfills'), paths.appIndexJs],
   output: {
     // The build folder.
     path: paths.appBuild,
@@ -95,7 +95,7 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-		      // @remove-on-eject-begin
+      // @remove-on-eject-begin
       // Resolve Babel runtime relative to react-scripts.
       // It usually still works on npm 3 without this but it would be
       // unfortunate to rely on, as react-scripts could be symlinked,
@@ -134,7 +134,7 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
-			  // @remove-on-eject-begin
+              // @remove-on-eject-begin
               // TODO: consider separate config for production,
               // e.g. to enable no-console and no-debugger only in production.
               baseConfig: {
@@ -170,12 +170,12 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-		      // @remove-on-eject-begin
+              // @remove-on-eject-begin
               babelrc: true,
               presets: [require.resolve('babel-preset-react-app')],
               // @remove-on-eject-end
               compact: true,
-			  plugins: ["transform-decorators-legacy"],
+              plugins: ["transform-decorators-legacy"],
             },
           },
           // The notation here is somewhat confusing.
@@ -300,7 +300,7 @@ module.exports = {
         // Pending further investigation:
         // https://github.com/mishoo/UglifyJS2/issues/2011
         comparisons: false,
-		drop_console: true,//--//增加
+        drop_console: true,//--//增加
         drop_debugger: true,//--增加
       },
       mangle: {
