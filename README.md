@@ -133,7 +133,7 @@ function resolve (dir) {                 //--（2）
             ],
           },
 ```
-···js
+```js
 	 alias: {
 	 ...
 	  '@': resolve('src'),
@@ -144,4 +144,11 @@ function resolve (dir) {                 //--（2）
     'babel-polyfill',
 	...
 	]
+```
+```js 
+.bablelrc
+	{
+  "presets": ["react"],
+  "plugins": ["syntax-dynamic-import"]
+}
 ```
