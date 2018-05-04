@@ -11,6 +11,11 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
+const px2rem = require('postcss-px2rem');//--增加rem
+
+function resolve (dir) {
+  return path.join(__dirname, '..', dir) //--增加resolve函数，得出目录的路径
+}
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -88,6 +93,8 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+	  '@':resolve('src'),//--为了以后import组件方便，将src目录取别名为@
+	  
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -157,7 +164,7 @@ module.exports = {
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
           {
-            test: /\.css$/,
+            test: /\.css|less$/, //--增加less
             use: [
               require.resolve('style-loader'),
               {
@@ -183,9 +190,13 @@ module.exports = {
                       ],
                       flexbox: 'no-2009',
                     }),
+					px2rem({remUnit: 75})//--增加px2rem 设计稿根据750px(iphone6)
                   ],
                 },
               },
+			  {
+				loader: require.resolve('less-loader') //--增加less-loader
+			  }
             ],
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
