@@ -1,19 +1,19 @@
 # my-react-app
-使用官方脚手架搭建的react开发环境
+使用官方脚手架搭建的react+redux开发环境
 
-安装官方脚手架
+一、装官方脚手架
 ```sh
 npm install -g create-react-app
 ```
-创建项目
+二、创建项目
 ```sh
 create-react-app my-react-app
 ```
-暴露配置文件
+三、暴露配置文件
 ```sh
 npm run eject
 ```
-安装必备插件
+四、安装必备插件
 ```sh
 npm install axios --save
 ```
@@ -59,3 +59,4 @@ npm install less-loader --save-dev
 ```sh
 npm install less --save-dev
 ```
+五、修改config文件夹中的配置文件
