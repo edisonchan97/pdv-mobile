@@ -69,14 +69,14 @@ function resolve (dir) {                 //--（2）
 }                                        //--（4）
 ```
 ```js
-	  oneOf: [
+oneOf: [
 		...
-		          {
-            test: /\.(js|jsx|mjs)$/,
-            include: paths.appSrc,
-            use: [
-              {
-                loader: require.resolve('babel-loader'),
+		 {
+        test: /\.(js|jsx|mjs)$/,
+        include: paths.appSrc,
+        use: [
+            {
+              loader: require.resolve('babel-loader'),
                 options: {
                   // @remove-on-eject-begin
                   babelrc: true,//--（5）
@@ -91,63 +91,62 @@ function resolve (dir) {                 //--（2）
               },
 				...
             ]
-          },
+      },
 	  ]
 ```
-
 ```js
-	          {
-            test:/\.(css|less)$/,//--（8）
-            use: [
-              require.resolve('style-loader'),
-              {
-                loader: require.resolve('css-loader'),
-                options: {
-                  importLoaders: 1,
-                },
-              },
-              {
-                loader: require.resolve('postcss-loader'),
-                options: {
-                  // Necessary for external CSS imports to work
-                  // https://github.com/facebookincubator/create-react-app/issues/2677
-                  ident: 'postcss',
-                  plugins: () => [
-                    require('postcss-flexbugs-fixes'),
-                    autoprefixer({
-                      browsers: [
+{
+  test:/\.(css|less)$/,//--（8）
+  use: [
+    require.resolve('style-loader'),
+    {
+      loader: require.resolve('css-loader'),
+          options: {
+              importLoaders: 1,
+          },
+    },
+    {
+      loader: require.resolve('postcss-loader'),
+          options: {
+              // Necessary for external CSS imports to work
+              // https://github.com/facebookincubator/create-react-app/issues/2677
+              ident: 'postcss',
+              plugins: () => [
+                require('postcss-flexbugs-fixes'),
+                autoprefixer({
+                  browsers: [
                         '>1%',
                         'last 4 versions',
                         'Firefox ESR',
                         'not ie < 9', // React doesn't support IE8 anyway
-                      ],
+                  ],
                       flexbox: 'no-2009',//--（9）
-                    }),
-                    px2rem({remUnit: 75})//--（10）设计稿根据750px(iphone6)
+                }),
+                px2rem({remUnit: 75})//--（10）设计稿根据750px(iphone6)
                   ],
                 },
               },
               {
                 loader: require.resolve('less-loader')  //--（11）
               },
-            ],
-          },
+          ],
+},
 ```
 ```js
-	 alias: {
+alias: {
 	 ...
 	  '@': resolve('src'),
-	 }
+}
 ```
 ```js
-	  entry: [
+entry: [
     'babel-polyfill',
-	...
-	]
+...
+]
 ```
 ```js 
-.bablelrc
-	{
+.bablelrc 文件内容
+{
   "presets": ["react"],
   "plugins": ["syntax-dynamic-import"]
 }
