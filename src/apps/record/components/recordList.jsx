@@ -24,8 +24,8 @@ class RecordList extends Component{
 
   componentWillReceiveProps(nextProps){
     // 判断类型是否重复
-    let currenType = this.props.location.pathname.split('/')[2];
-    let type = nextProps.location.pathname.split('/')[2];
+    let currenType = this.props.location.pathname.split('/')[3];
+    let type = nextProps.location.pathname.split('/')[3];
     if(currenType !== type){
       this.getRecord(type);
     }
@@ -36,7 +36,7 @@ class RecordList extends Component{
   }
 
   componentWillMount(){
-    let type = this.props.location.pathname.split('/')[2];
+    let type = this.props.location.pathname.split('/')[3];
     this.getRecord(type);
   }
 
