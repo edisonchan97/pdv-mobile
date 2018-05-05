@@ -1,5 +1,5 @@
 # my-react-app
-#使用官方脚手架搭建的react+react-redux+es6/7/8+react-router开发环境
+#使用官方脚手架搭建的react+react-redux+es6/7/8+react-router+less开发环境
 
 #一、装官方脚手架
 ```sh
