@@ -3,7 +3,7 @@ import { is, fromJS } from 'immutable';
 import PublicHeader from '@/components/header/header';
 import TouchableOpacity from '@/components/TouchableOpacity/TouchableOpacity';
 import PublicAlert from '@/components/alert/alert';
-import API from '@/api/api';
+import API from './api';
 import './style.less';
 
 class BrokeRage extends Component {

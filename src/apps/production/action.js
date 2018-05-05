@@ -1,5 +1,5 @@
 import * as pro from './action-type';
-import API from '@/api/api';
+import API from './api';
 
 // 初始化获取商品数据，保存至redux
 export const getProData = () => {

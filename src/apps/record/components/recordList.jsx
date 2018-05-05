@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { is, fromJS } from 'immutable';
-import API from '@/api/api';
-import './recordList.less';
+import API from '../api';
+import './style.less';
 
 class RecordList extends Component{
   

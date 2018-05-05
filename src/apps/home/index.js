@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { is, fromJS } from 'immutable';
 import PropTypes from 'prop-types';
-import API from '@/api/api';
+import API from './api';
 import envconfig from '@/envconfig/envconfig';
 import { saveFormData, saveImg, clearData } from '@/apps/home/action';
 import { clearSelected } from '@/apps/production/action';
