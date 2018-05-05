@@ -1,5 +1,5 @@
 import React,{Component}from 'react';
-import './back.less';
+import './style.less';
 
 export default class Back extends Component{
 

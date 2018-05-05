@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { is, fromJS } from 'immutable';
-import './TouchableOpacity.less';
+import './style.less';
 /**
  * 点击状态组件
  */
