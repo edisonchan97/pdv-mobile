@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { HashRouter, Switch, Route, Redirect,BrowserRouter } from 'react-router-dom';
 import asyncComponent from '@/utils/asyncComponent';
 
 import home from "@/apps/home/index";
@@ -13,17 +13,17 @@ const login = asyncComponent(() => import("@/apps/login/index"));
 export default class RouteConfig extends Component{
   render(){
     return(
-      <HashRouter>
+      <BrowserRouter>
         <Switch>
-          <Route path="/" exact component={home} />
-          <Route path="/record" component={record} />
-          <Route path="/helpcenter" component={helpcenter} />
-          <Route path="/production" component={production} />
-          <Route path="/balance" component={balance} />
-          <Route path="/login" component={login} />
-          <Redirect to="/" />
+          <Route path="/my-react-app" exact component={home} />
+          <Route path="/my-react-app/record" component={record} />
+          <Route path="/my-react-app/helpcenter" component={helpcenter} />
+          <Route path="/my-react-app/production" component={production} />
+          <Route path="/my-react-app/balance" component={balance} />
+          <Route path="/my-react-app/login" component={login} />
+          <Redirect to="/my-react-app" />
         </Switch>
-      </HashRouter>
+      </BrowserRouter>
     )
   }
 }
