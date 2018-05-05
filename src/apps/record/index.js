@@ -3,7 +3,7 @@ import { is, fromJS } from 'immutable';
 import { NavLink, Switch, Route, Redirect } from 'react-router-dom';
 import PublicHeader from '@/components/header/header';
 import RecordList from './components/recordList';
-import './record.css';
+import './style.less';
 
 class Record extends Component {
   state = {

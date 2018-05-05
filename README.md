@@ -151,4 +151,18 @@ entry: [
   "plugins": ["syntax-dynamic-import"]
 }
 ```
-六、完成 可以将此项目clone直接使用
+六、配置完成 可以将此项目clone直接使用
+七、规范化
+    （1）apps目录下的app都要作为独立可运行的app
+    （2）独立的app包括
+          action-type.js
+          index.js
+          action.js
+          reducer.js
+          style.less
+          component目录 自己单独的组件不公用，公用的组件放到src/components目录下
+     （3）将新app的路由写入src/routers.js中
+     （4）将新app的reducer写入src/reducers.js中
+     （5）app的style.less避免样式污染，样式都要包含在[app名称]-contaier中
+     （6）一些工具放到src/utils目录下
+      
