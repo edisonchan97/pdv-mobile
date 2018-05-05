@@ -181,7 +181,7 @@ entry: [
  ``` 说明：
     （1）apps目录下的app都要作为独立可运行的app
     （2）独立的app包括
-          action-type.js
+          action-type.js //--使用原始数据类型Symbol()消除魔术字符串
           index.js
           action.js
           reducer.js
