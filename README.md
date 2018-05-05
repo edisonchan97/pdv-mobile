@@ -156,8 +156,8 @@ entry: [
 #七、规范化
 
 ##目录结构
-     ```
-my-react-app/
+ ```
+ my-react-app/
   README.md
   node_modules/
   package.json
@@ -177,7 +177,6 @@ my-react-app/
     reducers.js
     routers.js
     store.js
-
  ```
  ``` 说明：
     （1）apps目录下的app都要作为独立可运行的app
