@@ -1,19 +1,19 @@
 # my-react-app
-使用官方脚手架搭建的react+redux开发环境
+#使用官方脚手架搭建的react+redux开发环境
 
-一、装官方脚手架
+#一、装官方脚手架
 ```sh
 npm install -g create-react-app
 ```
-二、创建项目
+#二、创建项目
 ```sh
 create-react-app my-react-app
 ```
-三、暴露配置文件
+#三、暴露配置文件
 ```sh
 npm run eject
 ```
-四、安装必备插件
+#四、安装必备插件
 ```sh
 npm install axios --save
 ```
@@ -59,7 +59,7 @@ npm install less-loader --save-dev
 ```sh
 npm install less --save-dev
 ```
-五、修改config文件夹中的配置文件
+#五、修改config文件夹中的配置文件
 ```js
 const paths = require('./paths');
 const px2rem = require('postcss-px2rem');//--（1）
@@ -151,8 +151,35 @@ entry: [
   "plugins": ["syntax-dynamic-import"]
 }
 ```
-六、配置完成 可以将此项目clone直接使用
-七、规范化
+#六、配置完成 可以将此项目clone直接使用
+
+#七、规范化
+
+##目录结构
+     ```
+my-react-app/
+  README.md
+  node_modules/
+  package.json
+  public/
+    index.html
+    favicon.ico
+  src/
+    api/
+    apps/
+    assets/
+    components/
+    envconfig/
+    style/
+    utils/
+    index.js
+    logo.svg
+    reducers.js
+    routers.js
+    store.js
+
+ ```
+ ``` 说明：
     （1）apps目录下的app都要作为独立可运行的app
     （2）独立的app包括
           action-type.js
@@ -165,4 +192,4 @@ entry: [
      （4）将新app的reducer写入src/reducers.js中
      （5）app的style.less避免样式污染，样式都要包含在[app名称]-contaier中
      （6）一些工具放到src/utils目录下
-      
+```
