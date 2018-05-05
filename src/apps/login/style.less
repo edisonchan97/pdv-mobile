@@ -1,0 +1,75 @@
+@import (less, reference) "../../style/mixin.css";
+
+.login-container{
+    padding-top: 88px;
+    background-color: #fff;
+    .login-nav{
+        display: flex;
+        height:120px;
+        align-items: center;
+        .login-nav-item{
+            flex:1;
+            font-size:30px;
+            text-align: center;
+            border-bottom:solid 2px #fff;
+            padding-bottom: 20px;
+        }
+        .cur{
+            color: #975ec9;
+            border-color: #975ec9;
+        }
+    }
+    .login-form{
+        background-color: #fff;
+        .login-form-item{
+          height: 120px;
+          border-bottom: 1px solid #eee;
+          span{
+            .font(32px, #555);
+            margin-left: 30px;
+            margin-right: 20px;
+          }
+          input{
+            border: none;
+            font-size: 30px;
+          }
+          ::-webkit-input-placeholder{ 
+            color: #ccc; 
+          }
+          .get-code-button{
+            padding: 10px 20px;
+            border: 2px solid #975ec9;
+            border-radius: 10px;
+            color: #975ec9;
+            background: #fff;
+          }
+        }
+        .found-password{
+            height: 120px;
+            padding:20px;
+            .found-password-item{
+                float: right;
+                font-size: 30px;
+            }
+        }
+        .login-button-box{
+            padding:0 20px;
+            width: 100%;
+            .login-button{
+                width: 100%;
+                height: 80px;
+                line-height: 80px;
+                border: none;
+                color: #fff;
+                background: #975ec9;
+                border-radius: 10px;
+            }
+        }
+      }
+    .login-tips{
+        font-size:30px;
+        text-align: center;
+        padding:40px; 
+      }  
+
+}
