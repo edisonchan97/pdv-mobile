@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { is, fromJS } from 'immutable';
-import BackHeader from '@/components/back/back';
+import PublicHeader from '@/components/header/header';
 import './style.less';
 
 class Login extends Component {
@@ -28,7 +28,7 @@ class Login extends Component {
         const { cur } = this.state;
         return (
             <main className="login-container">
-            <BackHeader title='登录'/>
+            <PublicHeader title='登录'/>
                 <nav className="login-nav">
                     <div className={cur === 'nav1' ? 'login-nav-item cur' : 'login-nav-item'} id='nav1' onClick={this.navChange.bind(this)}>手机登录</div>
                     <div className={cur === 'nav2' ? 'login-nav-item cur' : 'login-nav-item'} id='nav2' onClick={this.navChange.bind(this)}>密码登录</div>
