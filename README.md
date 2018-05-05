@@ -33,6 +33,9 @@ npm install react-addons-css-transition-group --save
 npm install react-redux --save
 ```
 ```sh
+npm install redux-logger --dev--save
+```
+```sh
 npm install react-router-dom --save
 ```
 ```sh
@@ -191,4 +194,50 @@ entry: [
      （4）将新app的reducer写入src/reducers.js中
      （5）app的style.less避免样式污染，样式都要包含在[app名称]-contaier中
      （6）一些工具放到src/utils目录下
+```
+
+八、发布
+  
+```
+The project was built assuming it is hosted at the server root.
+You can control this with the homepage field in your package.json.
+For example, add this to build it for GitHub Pages:
+
+  "homepage" : "http://myname.github.io/myapp",
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+Find out more about deployment here:
+
+  http://bit.ly/2vY88Kr
+
+  
+The project was built assuming it is hosted at /my-react-app/.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+To publish it at http://liviuscn.github.io/my-react-app, run:
+
+  npm install --save-dev gh-pages
+
+Add the following script in your package.json.
+
+    // ...
+    "scripts": {
+      // ...
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d build"
+    }
+
+Then run:
+
+  npm run deploy
+
+Find out more about deployment here:
+
+  http://bit.ly/2vY88Kr
 ```
