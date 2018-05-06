@@ -84,7 +84,7 @@ class Login extends Component {
             } else {
                 localStorage.clear()
             }
-            //用户信息存到sessionStorage中关闭页面后消失
+            //用户信息存到sessionStorage中关闭页面后消失 当前窗口有效 同一个浏览器新打开相同的url不能获取 cookie和loacalStorage可以
             sessionStorage['mobile'] = form.mobile
             sessionStorage['username'] = response.value.nickname
             sessionStorage['_accessToken'] = response.value.token
@@ -121,7 +121,7 @@ class Login extends Component {
     }
     componentWillMount() {
 
-        //根据localStorage初始化表单值 记住密码从local中自动添加账号密码 
+        //根据localStorage初始化表单值 记住密码从local中自动添加账号密码
         let info = { mobile: '', password: '', remember: false }
         let currentTimestamp = (new Date()).getTime()
 
@@ -129,12 +129,13 @@ class Login extends Component {
         if (currentTimestamp < localStorage.remember) {
             info.remember = true
             if (info.mobile === localStorage['mobile']) {
+                //cookie中手机号与localStorage中手机号一致
                 info.password = localStorage['password']
             }
         } else {
             localStorage.clear()
         }
-        this.props.init(info);
+        this.props.init(info);//初始化账号密码
 
     }
     render() {
