@@ -5,7 +5,7 @@ import API from './api';
 export const getProData = () => {
   // 返回函数，异步dispatch
   return async dispatch => {
-    try{
+    try {
       let result = await API.getProduction();
       result.map(item => {
         item.selectStatus = false;
@@ -16,12 +16,18 @@ export const getProData = () => {
         type: pro.GETPRODUCTION,
         dataList: result,
       })
-    }catch(err){
+    } catch (err) {
       console.error(err);
     }
   }
 }
-
+export const getProData2 = (result) => {
+  // 返回函数，异步dispatch
+  return {
+    type: pro.GETPRODUCTION,
+    dataList: result,
+  }
+}
 // 选择商品
 export const togSelectPro = index => {
   return {

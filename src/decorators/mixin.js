@@ -1,5 +1,11 @@
-//带有两个参数的decorator 第一个参数代表methods 第二个参数代表class
-//将方法扩展到class的prototype中
+/*
+* 修饰器的使用
+* 带有两个参数的decorator 第一个参数代表methods 第二个参数代表class
+* 为class扩展方法（将方法扩展到class的prototype中）
+* @param {object} methods 包含多个方法的对象
+* @target {class} 目标class
+* @return 不改变原class功能的基础上，进行拓展
+*/
 export default methods => {
   return target => {
     Object.assign(target.prototype, methods);

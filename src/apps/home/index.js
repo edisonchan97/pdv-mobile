@@ -10,7 +10,7 @@ import { clearSelected } from '@/apps/production/action';
 import PublicHeader from '@/components/header/header';
 import PublicAlert from '@/components/alert/alert';
 import TouchableOpacity from '@/components/TouchableOpacity/TouchableOpacity';
-import mixin, { padStr } from '@/utils/mixin';
+import mixin, { padStr } from '@/decorators/mixin';
 import './style.less';
 
 @mixin({ padStr })
@@ -145,7 +145,7 @@ class Home extends Component {
         </form>
         <div>
           <p className="common-title">请选择销售的产品</p>
-          <Link to="/production" className="common-select-btn">
+          <Link to="/my-react-app/production" className="common-select-btn">
             {
               this.selectedProList.length ? 
               <ul className="selected-pro-list">

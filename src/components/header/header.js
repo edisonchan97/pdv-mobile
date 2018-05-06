@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { is, fromJS } from 'immutable';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './style.less';
 
-export default class PublicHeader extends Component {
+class PublicHeader extends Component {
   static propTypes = {
     record: PropTypes.any,
     title: PropTypes.string.isRequired,
@@ -51,7 +52,12 @@ export default class PublicHeader extends Component {
               <NavLink to="/my-react-app" exact className="nav-link icon-jiantou-copy-copy">首页</NavLink>
               <NavLink to="/my-react-app/balance" exact className="nav-link icon-jiantou-copy-copy">提现</NavLink>
               <NavLink to="/my-react-app/helpcenter" exact className="nav-link icon-jiantou-copy-copy">帮助中心</NavLink>
-              <NavLink to="/my-react-app/login" exact className="nav-link icon-jiantou-copy-copy">登录</NavLink>
+              {
+                !this.props.userData.isLogin && <NavLink to="/my-react-app/login" exact className="nav-link icon-jiantou-copy-copy">登录</NavLink>
+              }
+                   {
+                this.props.userData.isLogin && <NavLink to="/my-react-app/userCenter" exact className="nav-link icon-jiantou-copy-copy">用户中心</NavLink>
+              }
             </aside>
           }
         </ReactCSSTransitionGroup>
@@ -59,3 +65,6 @@ export default class PublicHeader extends Component {
     );
   }
 }
+export default connect(state => ({
+  userData: state.userData
+}))(PublicHeader);

@@ -45,6 +45,12 @@ npm install redux --save
 npm install redux-thunk --save
 ```
 ```sh
+npm install md5 --save
+```
+```sh
+npm install moment --save
+```
+```sh
 npm install babel-plugin-syntax-dynamic-import --save-dev
 ```
 ```sh
@@ -189,11 +195,14 @@ entry: [
           action.js
           reducer.js
           style.less
+          api.js
           component目录 自己单独的组件不公用，公用的组件放到src/components目录下
      （3）将新app的路由写入src/routers.js中
      （4）将新app的reducer写入src/reducers.js中
      （5）app的style.less避免样式污染，样式都要包含在[app名称]-contaier中
      （6）一些工具放到src/utils目录下
+      (7)一些修饰器放到src/decorators目录下下
+      (8)关于接口调用可以在index和action中，推荐写到inde页中，因为index页的方法比较全面，像alert,router,context等都可以直接调用
 ```
 
 八、发布
