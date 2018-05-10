@@ -12,7 +12,6 @@ import PublicAlert from '@/components/alert/alert';
 import TouchableOpacity from '@/components/TouchableOpacity/TouchableOpacity';
 import mixin, { padStr } from '@/decorators/mixin';
 import './style.less';
-import sortSearchOption from '@/utils/sortSearchOption';
 
 @mixin({ padStr })
 class Home extends Component {
@@ -120,21 +119,7 @@ class Home extends Component {
   }
 
   componentWillMount() {
-
-    let data = {
-      aaa: 'dddd',//将属性名aaa替换为dddd
-      order: {
-        namea: (data) => data ? 'a1' : 'a2', //增加属性名namea 属性值为order有初始值为a1没有则为a2
-        valuea: (data) => data ? 'a1' : 'a2',
-      },
-      code: {
-        nameb: (data) => data ? 'b1' : 'b2',
-        valueb: (data) => data ? 'b1' : 'b2'
-      }
-    }
-    let a = sortSearchOption({ aaa: '12',order:'adf' }, data, null);
-    console.log(a);
-
+    console.log(this.props.history);
     this.initData(this.props);
   }
 

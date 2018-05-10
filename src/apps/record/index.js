@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { is, fromJS } from 'immutable';
 import { NavLink, Switch, Route, Redirect } from 'react-router-dom';
-import PublicHeader from '@/components/header/header';
+//import PublicHeader from '@/components/header/header';
+import NavBar from '@/components/navbar/navbar';
 import RecordList from './components/recordList';
 import './style.less';
 
@@ -52,7 +53,7 @@ class Record extends Component {
   render() {
     return (
       <main className="common-con-top">
-        <PublicHeader title='记录' />
+        <NavBar title='记录' path='/my-react-app'/>
         <section className="record-nav-con">
           <nav className="record-nav">
             <NavLink to={`${this.props.match.path}/passed`} className="nav-link">已通过</NavLink>
