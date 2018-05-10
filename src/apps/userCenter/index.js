@@ -9,10 +9,10 @@ export default class UserCenter extends Component {
     }
     render() {
         return (
-            <main>
+            <main className='usercenter-container'>
                 <PublicHeader title="用户中心" record />
                 <article className="context-con">
-
+                    
                 </article>
             </main>
         )

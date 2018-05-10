@@ -1,5 +1,5 @@
 # my-react-app
-#使用官方脚手架搭建的react+react-redux+es6/7/8+react-router+less开发环境
+#使用官方脚手架搭建的react+react-redux+es6/7/8+react-router+less开发环境 使用的eject方法，没有引入ant样式库，图标使用阿里图标
 
 #一、装官方脚手架
 ```sh

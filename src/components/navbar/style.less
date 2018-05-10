@@ -1,0 +1,27 @@
+@import (less, reference) "../../style/mixin.css";
+@import "../../assets/iconfonts/iconfont.css";
+
+.navbar-container{
+  background-color: @base-color;
+  .flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  .wh(100%, 88px);
+  .navbar-slide-icon{
+    .font(36px, #fff);
+    .positionLeft;
+  }
+  .navbar-title{
+    .font(40px, #fff);
+  }
+  .navbar-link{
+    .font(40px, #fff);
+    .positionRight;
+  }
+  .navbar-link-confim{
+    font-size: 32px;
+  }
+
+}
