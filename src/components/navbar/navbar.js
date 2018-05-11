@@ -34,14 +34,26 @@ class NavBar extends Component {
     }
     //this.props.history.goBack();//
   }
-  func=()=>{
-
+  func = () => {
+    var isChanging = 0;
+    if (isChanging--) {
+      return false;
+    }
+    if (window.location.hash == "#backButtonClick") {
+      window.location = "#xx链接"
+      isChanging = 1;
+    }
+    else {
+      isChanging = 2;
+      window.location.hash = "#backButtonClick";
+    }
+    window.location.hash = "#forward"
   }
-  componentDidMount(){
-    　window.addEventListener('hashchange', this.func, false);
+  componentDidMount() {
+    //window.addEventListener('hashchange', this.func, false);
   }
-  componentWillUnmount(){
-    window.removeEventListener('hashchange');
+  componentWillUnmount() {
+    //window.removeEventListener('hashchange');
   }
   render() {
     return (
