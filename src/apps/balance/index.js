@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { is, fromJS } from 'immutable';
 import PublicHeader from '@/components/header/header';
-import TouchableOpacity from '@/components/TouchableOpacity/TouchableOpacity';
+import TouchableOpacity from '@/components/touchableOpacity/touchableOpacity';
 import PublicAlert from '@/components/alert/alert';
 import API from './api';
 import './style.less';

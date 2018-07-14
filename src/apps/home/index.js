@@ -9,7 +9,7 @@ import { saveFormData, saveImg, clearData } from '@/apps/home/action';
 import { clearSelected } from '@/apps/production/action';
 import PublicHeader from '@/components/header/header';
 import PublicAlert from '@/components/alert/alert';
-import TouchableOpacity from '@/components/TouchableOpacity/TouchableOpacity';
+import TouchableOpacity from '@/components/touchableOpacity/touchableOpacity';
 import mixin, { padStr } from '@/decorators/mixin';
 import './style.less';
 

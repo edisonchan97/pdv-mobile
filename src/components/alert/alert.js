@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { is, fromJS } from 'immutable';
-import TouchableOpacity from '@/components/TouchableOpacity/TouchableOpacity';
+import TouchableOpacity from '@/components/touchableOpacity/touchableOpacity';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './alert.less';
 
