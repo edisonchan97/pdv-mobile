@@ -34,8 +34,8 @@ class Record extends Component {
 
   componentWillReceiveProps(nextProps){
     // 属性变化时设置头部底部标签位置
-    let currenType = this.props.location.pathname.split('/')[3];
-    let type = nextProps.location.pathname.split('/')[3];
+    let currenType = this.props.location.pathname.split('/')[2];
+    let type = nextProps.location.pathname.split('/')[2];
     if(currenType !== type){
       this.setFlagBarPos(type);
     }
@@ -47,13 +47,13 @@ class Record extends Component {
   
   componentWillMount(){
     // 初始化设置头部底部标签位置
-    let type = this.props.location.pathname.split('/')[3];
+    let type = this.props.location.pathname.split('/')[2];
     this.setFlagBarPos(type);
   }
   render() {
     return (
       <main className="common-con-top">
-        <NavBar title='记录' path='/my-react-app'/>
+        <NavBar title='记录' path='/'/>
         <section className="record-nav-con">
           <nav className="record-nav">
             <NavLink to={`${this.props.match.path}/passed`} className="nav-link">已通过</NavLink>

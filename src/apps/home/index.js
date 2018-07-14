@@ -119,7 +119,7 @@ class Home extends Component {
   }
 
   componentWillMount() {
-    console.log(this.props.history);
+    //console.log(this.props.history);
     this.initData(this.props);
   }
 
@@ -146,7 +146,7 @@ class Home extends Component {
         </form>
         <div>
           <p className="common-title">请选择销售的产品</p>
-          <Link to="/my-react-app/production" className="common-select-btn">
+          <Link to="/production" className="common-select-btn">
             {
               this.selectedProList.length ?
                 <ul className="selected-pro-list">

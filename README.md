@@ -18,7 +18,7 @@ npm install -g create-react-app
 ```
 ## 二、创建项目
 ```sh
-create-react-app my-react-app
+create-react-app pdv-mobile
 ```
 ## 三、暴露配置文件
 ```sh
@@ -177,7 +177,7 @@ entry: [
 
 ### 目录结构
  ```
- my-react-app/
+ pdv-mobile/
   README.md
   node_modules/
   package.json
@@ -236,11 +236,11 @@ Find out more about deployment here:
   http://bit.ly/2vY88Kr
 
   
-The project was built assuming it is hosted at /my-react-app/.
+The project was built assuming it is hosted at /pdv-mobile/.
 You can control this with the homepage field in your package.json.
 
 The build folder is ready to be deployed.
-To publish it at http://liviuscn.github.io/my-react-app, run:
+To publish it at http://liviuscn.github.io/pdv-mobile, run:
 
   npm install --save-dev gh-pages
 

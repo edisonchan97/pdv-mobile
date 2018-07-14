@@ -16,14 +16,14 @@ export default class RouteConfig extends Component{
     return(
       <BrowserRouter>
         <Switch>
-          <Route path="/my-react-app" exact component={home} />
-          <Route path="/my-react-app/record" component={record} />
-          <Route path="/my-react-app/helpcenter" component={helpcenter} />
-          <Route path="/my-react-app/production" component={production} />
-          <Route path="/my-react-app/balance" component={balance} />
-          <Route path="/my-react-app/login" component={login} />
-          <Route path="/my-react-app/userCenter" component={userCenter} />
-          <Redirect to="/my-react-app" />
+          <Route path="/" exact component={home} />
+          <Route path="/record" component={record} />
+          <Route path="/helpcenter" component={helpcenter} />
+          <Route path="/production" component={production} />
+          <Route path="/balance" component={balance} />
+          <Route path="/login" component={login} />
+          <Route path="/userCenter" component={userCenter} />
+          <Redirect to="/" />
         </Switch>
       </BrowserRouter>
     )

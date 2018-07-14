@@ -38,8 +38,8 @@ class Login extends Component {
         if (!is(fromJS(this.props.userData), fromJS(nextProps.userData))) {
             //判断是否由未登录--》登录 是跳转到首页 
             if (!this.props.userData.isLogin && nextProps.userData.isLogin) {
-                this.props.history.push('/my-react-app')
-                //this.context.router.history.push("/my-react-app");//利用context实现跳转
+                this.props.history.push('/')
+                //this.context.router.history.push("/");//利用context实现跳转
             }
         }
     }
