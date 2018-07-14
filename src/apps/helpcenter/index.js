@@ -27,7 +27,7 @@ export default class HelpCenter extends Component {
           <p>axios：v0.17</p>
           <p>less：v2.7</p>
           <p>immutable：v3.8</p>
-          <p>项目地址 <a href="https://github.com/liviuscn/my-react-app">github</a></p>
+          <p>项目地址 <a href="https://github.com/liviuscn/pdv-mobile">github</a></p>
         </article>
       </main>
     )

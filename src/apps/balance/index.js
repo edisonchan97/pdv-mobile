@@ -67,6 +67,7 @@ class BrokeRage extends Component {
     this.setState({
       alertStatus: true,
       alertTip,
+      applyNum:''
     })
   }
 
