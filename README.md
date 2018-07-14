@@ -1,27 +1,30 @@
-# pdv-mobile Project Da Vinci 达芬奇计划 移动端使用
+# pdv-mobile （Project Da Vinci）达芬奇计划移动端
 
-#基于react官方脚手架create-react-app搭建的react+react-redux+es6/7/8+react-router+less开发环境 使用的eject暴露webapck配置方法，没有引入ant样式库，图标使用阿里图标
-#这是利用react官方的脚手架搭配自己的插件的开发方式，不暴露配置文件也可以，（为什么要暴露配置文件？）
-#这里列举了一些必备的插件
-#关于异步是使用saga好，还是使用 async+await好？
-#如何评价dva脚手架
-#移动端和pc端的逻辑处理数据处理方面有没有差异
-#以此安装环境以后开发可在此基础之上改进
-#关注新技术，不断进步
+- 基于react官方脚手架create-react-app搭建的react+react-redux+es6/7/8+react-router+less开发环境 
+- 使用的eject暴露webapck配置方法
+- 没有引入ant样式库
+- 图标使用阿里图标
+- 这是利用react官方的脚手架搭配自己的插件的开发方式， 不暴露配置文件也可以，（为什么要暴露配置文件？）
+- 这里列举了一些必备的插件
+- 关于异步是使用saga好，还是使用 async+await好？
+- 如何评价dva脚手架
+- 移动端和pc端的逻辑处理数据处理方面有没有差异
+- 以此安装环境以后开发可在此基础之上改进
+- 关注新技术，不断进步
 
-#一、装官方脚手架
+## 一、装官方脚手架
 ```sh
 npm install -g create-react-app
 ```
-#二、创建项目
+## 二、创建项目
 ```sh
 create-react-app my-react-app
 ```
-#三、暴露配置文件
+## 三、暴露配置文件
 ```sh
 npm run eject
 ```
-#四、安装必备插件
+##  四、安装必备插件
 ```sh
 npm install axios --save
 ```
@@ -76,7 +79,7 @@ npm install less-loader --save-dev
 ```sh
 npm install less --save-dev
 ```
-#五、修改config文件夹中的配置文件
+## 五、修改config文件夹中的配置文件
 ```js
 const paths = require('./paths');
 const px2rem = require('postcss-px2rem');//--（1）
@@ -168,11 +171,11 @@ entry: [
   "plugins": ["syntax-dynamic-import"]
 }
 ```
-#六、配置完成 可以将此项目clone直接使用
+## 六、配置完成 可以将此项目clone直接使用
 
-#七、规范化
+## 七、规范化
 
-##目录结构
+### 目录结构
  ```
  my-react-app/
   README.md
@@ -213,7 +216,7 @@ entry: [
       (8)关于接口调用可以在index和action中，推荐写到inde页中，因为index页的方法比较全面，像alert,router,context等都可以直接调用
 ```
 
-八、发布
+## 八、发布
   
 ```
 The project was built assuming it is hosted at the server root.
