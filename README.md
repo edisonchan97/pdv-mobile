@@ -1,4 +1,4 @@
-# pav-mobile Project Da Vinci 达芬奇计划 移动端使用
+# pdv-mobile Project Da Vinci 达芬奇计划 移动端使用
 
 #基于react官方脚手架create-react-app搭建的react+react-redux+es6/7/8+react-router+less开发环境 使用的eject暴露webapck配置方法，没有引入ant样式库，图标使用阿里图标
 #这是利用react官方的脚手架搭配自己的插件的开发方式，不暴露配置文件也可以，（为什么要暴露配置文件？）
