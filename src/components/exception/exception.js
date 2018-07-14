@@ -1,4 +1,6 @@
-import React,{Component} from 'react;
+import React,{Component} from 'react'
+import './exception.less'
+
 class Exception extends Component {
 	render(){
 		return(
