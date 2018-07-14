@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { is, fromJS } from 'immutable';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import './style.less';
+import './navbar.less';
 
 class NavBar extends Component {
   //利用context实现跳转要加上这个
@@ -39,7 +39,7 @@ class NavBar extends Component {
     if (isChanging--) {
       return false;
     }
-    if (window.location.hash == "#backButtonClick") {
+    if (window.location.hash === "#backButtonClick") {
       window.location = "#xx链接"
       isChanging = 1;
     }
