@@ -6,10 +6,9 @@ import PropTypes from 'prop-types';
 import API from './api';
 import envconfig from '@/envconfig/envconfig';
 import { saveFormData, saveImg, clearData } from '@/apps/home/action';
+import { handleLoading } from '@/apps/common/action';
 import { clearSelected } from '@/apps/production/action';
-import PublicHeader from '@/components/header/header';
-import PublicAlert from '@/components/alert/alert';
-import TouchableOpacity from '@/components/touchableOpacity/touchableOpacity';
+import { PublicHeader, PublicAlert, Spin, TouchableOpacity } from 'pdv';
 import mixin, { padStr } from '@/decorators/mixin';
 import './style.less';
 
@@ -106,6 +105,9 @@ class Home extends Component {
         this.selectedProList.push(item);
       }
     })
+    setTimeout(() => {
+      this.props.handleLoading(false);
+    }, 2000);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -169,6 +171,7 @@ class Home extends Component {
         </div>
         <TouchableOpacity className="submit-btn" clickCallBack={this.sumitForm} text="提交" />
         <PublicAlert closeAlert={this.closeAlert} alertTip={this.state.alertTip} alertStatus={this.state.alertStatus} />
+        <Spin spinning={this.props.loading} tip='加载中...' />
       </main>
     );
   }
@@ -177,9 +180,11 @@ class Home extends Component {
 export default connect(state => ({
   formData: state.formData,
   proData: state.proData,
+  loading: state.common.loading
 }), {
     saveFormData,
     saveImg,
     clearData,
     clearSelected,
+    handleLoading
   })(Home);

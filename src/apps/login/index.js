@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { is, fromJS } from 'immutable';
 import PropTypes from 'prop-types';
 import md5 from 'md5';
-import PublicHeader from '@/components/header/header';
+import {PublicHeader} from 'pdv';
 import { login, init } from '@/apps/login/action';
 import API from './api';
 import './style.less';

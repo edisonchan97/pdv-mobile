@@ -3,7 +3,7 @@ import { is, fromJS } from 'immutable';
 import { connect } from 'react-redux';
 import { getProData, togSelectPro, editPro, getProData2 } from '@/apps/production/action';
 import PropTypes from 'prop-types';
-import PublicHeader from '@/components/header/header';
+import {PublicHeader,TouchableOpacity,PublicAlert} from 'pdv';
 import './style.less';
 import API from './api';
 

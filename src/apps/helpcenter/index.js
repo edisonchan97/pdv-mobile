@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PublicHeader from '@/components/header/header'; 
+import {PublicHeader} from 'pdv';
 import { is, fromJS } from 'immutable';
 import './style.less';
 

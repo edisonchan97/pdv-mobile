@@ -1,9 +1,9 @@
-import * as home from './action-type';
+import * as types from './action-type';
 
 // 保存表单数据
 export const saveFormData = (value, datatype) => {
   return {
-    type: home.SAVEFORMDATA,
+    type: types.SAVEFORMDATA,
     value,
     datatype,
   }
@@ -12,7 +12,7 @@ export const saveFormData = (value, datatype) => {
 // 保存图片地址
 export const saveImg = path => {
   return {
-    type: home.SAVEIMG,
+    type: types.SAVEIMG,
     path,
   }
 }
@@ -20,7 +20,6 @@ export const saveImg = path => {
 // 保存图片地址
 export const clearData = () => {
   return {
-    type: home.CLEARDATA,
+    type: types.CLEARDATA,
   }
 }
-

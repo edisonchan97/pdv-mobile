@@ -1,0 +1,26 @@
+@import (reference) "../../style/mixin.less";
+
+.spin-con{
+  .coverScreen(fixed, rgba(0, 0, 0, 0.1));
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color:@base-color;
+}
+.spin-enter{
+  opacity: 1;
+}
+.spin-enter.spin-enter-active{
+  transition: all 300ms;
+  opacity: 1;
+}
+
+.spin-leave{
+  opacity: 1;
+}
+.spin-leave.spin-leave-active{
+  transition: all 300ms;
+  opacity: 1;
+}
