@@ -10,4 +10,4 @@
 - api.js 接口文件
 - mock.js 本地模拟数据
 - 路由 apps/[模块]/[app名称]/XX
-- common文件夹中存放公共的acton,state操作，比如loading、alert、
+- loading、alert等操作使用this.setState(),不使用redux

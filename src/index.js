@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import FastClick from 'fastclick';
 import configureStore from '@/store';
 import Routes from '@/routers';
@@ -14,7 +14,7 @@ FastClick.attach(document.body);
 
 ReactDOM.render(
   <Provider store={store}>
-       <Routes/>
-    </Provider>
-, document.getElementById('root'));
+    <Routes />
+  </Provider>
+  , document.getElementById('root'));
 registerServiceWorker();

@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import API from './api';
 import envconfig from '@/envconfig/envconfig';
 import { saveFormData, saveImg, clearData } from '@/apps/home/action';
-import { handleLoading } from '@/apps/common/action';
 import { clearSelected } from '@/apps/production/action';
 import { PublicHeader, PublicAlert, Spin, TouchableOpacity } from 'pdv';
 import mixin, { padStr } from '@/decorators/mixin';
@@ -25,6 +24,7 @@ class Home extends Component {
   state = {
     alertStatus: false, //弹框状态
     alertTip: '', //弹框提示文字
+    loading:true
   }
   /**
    * 已选择的商品数据
@@ -86,6 +86,7 @@ class Home extends Component {
     this.setState({
       alertStatus: true,
       alertTip,
+      loading:true
     })
   }
 
@@ -106,7 +107,7 @@ class Home extends Component {
       }
     })
     setTimeout(() => {
-      this.props.handleLoading(false);
+      this.setState({loading:false})
     }, 2000);
   }
 
@@ -171,7 +172,7 @@ class Home extends Component {
         </div>
         <TouchableOpacity className="submit-btn" clickCallBack={this.sumitForm} text="提交" />
         <PublicAlert closeAlert={this.closeAlert} alertTip={this.state.alertTip} alertStatus={this.state.alertStatus} />
-        <Spin spinning={this.props.loading} tip='加载中...' />
+        <Spin spinning={this.state.loading} tip='加载中...' />
       </main>
     );
   }
@@ -179,8 +180,7 @@ class Home extends Component {
 
 export default connect(state => ({
   formData: state.formData,
-  proData: state.proData,
-  loading: state.common.loading
+  proData: state.proData
 }), {
     saveFormData,
     saveImg,

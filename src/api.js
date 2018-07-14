@@ -1,7 +1,7 @@
 //公共api
 import Server from '@/server';
 
-class API extends Server{
+class API extends Server {
   /**
    *  用途：测试api
    *  @url 
@@ -9,12 +9,12 @@ class API extends Server{
    *  @method post
    *  @return {promise}
    */
-  async test(params = {}){
-    try{
-      let result = await this.axios('post', '/test', params); 
-      if(result && result.status === 1){
+  async test(params = {}) {
+    try {
+      let result = await this.axios('post', '/test', params);
+      if (result && result.status === 1) {
         return result;
-      }else{
+      } else {
         let err = {
           tip: '失败',
           response: result,
@@ -23,11 +23,11 @@ class API extends Server{
         }
         throw err;
       }
-    }catch(err){
+    } catch (err) {
       throw err;
     }
   }
-  
+
 }
 
 export default new API();
