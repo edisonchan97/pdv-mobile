@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { is, fromJS } from 'immutable';
 import './touchableOpacity.less';
 /**
- * 点击状态组件
+ * 点击状态组件 按钮
  */
 export default class TouchableOpacity extends Component{
   static propTypes = {
