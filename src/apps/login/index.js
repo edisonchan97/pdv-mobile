@@ -141,7 +141,7 @@ class Login extends Component {
     render() {
         const { cur } = this.state;
         return (
-            <main className="login-container">
+            <main className="pdv-login page">
                 <PublicHeader title='登录' />
                 <nav className="login-nav">
                     <div className={cur === 'nav1' ? 'login-nav-item cur' : 'login-nav-item'} id='nav1' onClick={this.navChange.bind(this)}>手机登录</div>

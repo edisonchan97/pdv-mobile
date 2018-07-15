@@ -4,7 +4,7 @@ import {PublicHeader,TouchableOpacity,PublicAlert} from 'pdv';
 import API from './api';
 import './style.less';
 
-class BrokeRage extends Component {
+class Balance extends Component {
 
     state = {
       applyNum: '', //输入值
@@ -89,11 +89,11 @@ class BrokeRage extends Component {
 
   render() {
     return (
-      <main className="home-container">
+      <main className="pdv-balance page">
         <PublicHeader title='提现' record />
-        <section className="broke-main-content">
-          <p className="broke-header">您的可提现金额为：¥ {this.state.balance.balance}</p>
-          <form className="broke-form">
+        <section className="balance-main-content">
+          <p className="balance-header">您的可提现金额为：¥ {this.state.balance.balance}</p>
+          <form className="balance-form">
             <p>请输入提现金额（元）</p>
             <p>¥ <input type="text" value={this.state.applyNum} placeholder="0.00" onInput={this.handleInput} maxLength="5" /></p>
           </form>
@@ -105,4 +105,4 @@ class BrokeRage extends Component {
   }
 }
 
-export default BrokeRage;
+export default Balance;

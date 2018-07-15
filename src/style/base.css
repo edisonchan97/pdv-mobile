@@ -54,8 +54,7 @@ li{
 html,body{
   height: 100%;
   width: 100%;
-  overflow: hidden;
-  display: flex;
+  touch-action: none;
 }
 .common-con-top{
   margin-top: 88px;
@@ -67,10 +66,18 @@ html,body{
   white-space:nowrap
 }
 
-#root{
-  /* height: 100%; */
-  /* width: 100%; */
-  padding-top: 100px;
+.pdv-container,.page{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.pdv-container{
   overflow: hidden;
-  flex: 1
+}
+.page{
+  overflow-y: auto;
+  z-index: 1;
+  top:88px;
 }

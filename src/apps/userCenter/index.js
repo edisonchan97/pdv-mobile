@@ -9,7 +9,7 @@ export default class UserCenter extends Component {
     }
     render() {
         return (
-            <main className='pdv-usercenter'>
+            <main className='pdv-usercenter page'>
                 <PublicHeader title="用户中心" record />
                 <article className="context-con">
                      <p>积分：1000</p>

@@ -11,7 +11,7 @@ export default class HelpCenter extends Component {
 
   render(){
     return (
-      <main>
+      <main className='pdv-helpcenter page'>
         <PublicHeader title="帮助中心" record />
         <article className="context-con">
           <h2>介绍</h2>

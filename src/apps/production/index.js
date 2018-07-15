@@ -3,7 +3,7 @@ import { is, fromJS } from 'immutable';
 import { connect } from 'react-redux';
 import { getProData, togSelectPro, editPro, getProData2 } from '@/apps/production/action';
 import PropTypes from 'prop-types';
-import {PublicHeader,TouchableOpacity,PublicAlert} from 'pdv';
+import {PublicHeader} from 'pdv';
 import './style.less';
 import API from './api';
 
@@ -59,8 +59,8 @@ class Production extends Component {
 
   render() {
     return (
-      <main className="common-con-top">
-        <PublicHeader title='首页' confirm />
+      <main className="pdv-production page">
+        <PublicHeader title='商品列表' confirm />
         <section className="pro-list-con">
           <ul className="pro-list-ul">
             {

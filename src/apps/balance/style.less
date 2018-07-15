@@ -1,40 +1,41 @@
 @import (reference) "../../style/mixin.less";
-
-
-.broke-main-content{
-  padding-top: @common-wd;
-  .broke-header{
-    .font(32px, #999);
-    padding: 0 @common-wd;
-  }
-  .broke-form{
-    background-color: #fff;
-    min-height: 250px;
-    margin-top: @common-wd;
-    .flex;
-    flex-direction: column;
-    p:nth-of-type(1){
-      .font(40px);
+.pdv-balance{
+  .balance-main-content{
+    padding-top: @common-wd;
+    .balance-header{
+      .font(32px, #999);
+      padding: 0 @common-wd;
     }
-    p:nth-of-type(2){
-      .font(40px);
-      ::-webkit-input-placeholder{ 
-        color: #ccc; 
-      }
+    .balance-form{
+      background-color: #fff;
+      min-height: 250px;
       margin-top: @common-wd;
-      input{
-        border: none;
+      .flex;
+      flex-direction: column;
+      p:nth-of-type(1){
         .font(40px);
-        width: 180px;
+      }
+      p:nth-of-type(2){
+        .font(40px);
+        ::-webkit-input-placeholder{ 
+          color: #ccc; 
+        }
+        margin-top: @common-wd;
+        input{
+          border: none;
+          .font(40px);
+          width: 180px;
+        }
       }
     }
-  }
-  .submit-btn{
-    width: 90%;
-    background-color: @base-color;
-    margin: 50px auto 0;
-    border-radius: 10px;
-    line-height: 100px;
-    .font(40px, #fff, center);
+    .submit-btn{
+      width: 90%;
+      background-color: @base-color;
+      margin: 50px auto 0;
+      border-radius: 10px;
+      line-height: 100px;
+      .font(40px, #fff, center);
+    }
   }
 }
+

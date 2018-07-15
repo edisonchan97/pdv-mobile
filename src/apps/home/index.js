@@ -105,9 +105,6 @@ class Home extends Component {
         this.selectedProList.push(item);
       }
     })
-    setTimeout(() => {
-      this.setState({loading:false})
-    }, 2000);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -125,11 +122,14 @@ class Home extends Component {
     this.initData(this.props);
   }
 
+  componentDidMount(){
+      this.setState({loading:false})
+  }
 
   render() {
 
     return (
-      <main className="pdv-home">
+      <main className="pdv-home page">
         <PublicHeader title='首页' record />
         <p className="common-title">请录入您的信息</p>
         <form className="home-form">

@@ -50,6 +50,9 @@ class Record extends Component {
     let type = this.props.location.pathname.split('/')[2];
     this.setFlagBarPos(type);
   }
+  componentWillUnmount() {
+    this._isMounted = false
+  }
   render() {
     return (
       <main className="pdv-record">

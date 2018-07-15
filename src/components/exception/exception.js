@@ -10,3 +10,5 @@ class Exception extends Component {
 		)
 	}
 }
+
+export default Exception
