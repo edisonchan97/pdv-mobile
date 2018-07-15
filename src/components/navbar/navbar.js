@@ -61,10 +61,10 @@ class NavBar extends Component {
         <span className="navbar-slide-icon" onClick={this.goBack}>返回</span>
         <span className="navbar-title">{this.props.title}</span>
         {
-          this.props.record && <NavLink to="/record" exact className="navbar-link icon-jilu"></NavLink>
+          this.props.record && <NavLink to="/pdv-mobile/record" exact className="navbar-link icon-jilu"></NavLink>
         }
         {
-          this.props.confirm && <NavLink to="/" exact className="navbar-link navbar-link-confim">确定</NavLink>
+          this.props.confirm && <NavLink to="/pdv-mobile" exact className="navbar-link navbar-link-confim">确定</NavLink>
         }
       </header>
     );

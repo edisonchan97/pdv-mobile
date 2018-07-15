@@ -34,8 +34,8 @@ class Record extends Component {
 
   componentWillReceiveProps(nextProps) {
     // 属性变化时设置头部底部标签位置
-    let currenType = this.props.location.pathname.split('/')[2];
-    let type = nextProps.location.pathname.split('/')[2];
+    let currenType = this.props.location.pathname.split('/')[3];
+    let type = nextProps.location.pathname.split('/')[3];
     if (currenType !== type) {
       this.setFlagBarPos(type);
     }
@@ -47,7 +47,7 @@ class Record extends Component {
 
   componentWillMount() {
     // 初始化设置头部底部标签位置
-    let type = this.props.location.pathname.split('/')[2];
+    let type = this.props.location.pathname.split('/')[3];
     this.setFlagBarPos(type);
   }
   componentWillUnmount() {
@@ -56,7 +56,7 @@ class Record extends Component {
   render() {
     return (
       <main className="pdv-record">
-        <Navbar title='记录' path='/' />
+        <Navbar title='记录' path='/pdv-mobile' />
         <section className="record-nav-con">
           <nav className="record-nav">
             <NavLink to={`${this.props.match.path}/passed`} className="nav-link">已通过</NavLink>

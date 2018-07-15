@@ -16,14 +16,14 @@ export default class RouteConfig extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/" exact component={home} />
-          <Route path="/record" component={record} />
-          <Route path="/helpcenter" component={helpcenter} />
-          <Route path="/production" component={production} />
-          <Route path="/balance" component={balance} />
-          <Route path="/login" component={login} />
-          <Route path="/userCenter" component={userCenter} />
-          <Redirect to="/" />
+          <Route path="/pdv-mobile" exact component={home} />
+          <Route path="/pdv-mobile/record" component={record} />
+          <Route path="/pdv-mobile/helpcenter" component={helpcenter} />
+          <Route path="/pdv-mobile/production" component={production} />
+          <Route path="/pdv-mobile/balance" component={balance} />
+          <Route path="/pdv-mobile/login" component={login} />
+          <Route path="/pdv-mobile/userCenter" component={userCenter} />
+          <Redirect to="/pdv-mobile" />
         </Switch>
       </BrowserRouter>
     )
