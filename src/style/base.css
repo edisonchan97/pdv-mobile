@@ -53,6 +53,9 @@ li{
 }
 html,body{
   height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
 }
 .common-con-top{
   margin-top: 88px;
@@ -62,4 +65,12 @@ html,body{
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap
+}
+
+#root{
+  /* height: 100%; */
+  /* width: 100%; */
+  padding-top: 100px;
+  overflow: hidden;
+  flex: 1
 }

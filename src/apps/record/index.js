@@ -52,7 +52,7 @@ class Record extends Component {
   }
   render() {
     return (
-      <main className="common-con-top">
+      <main className="pdv-record">
         <Navbar title='记录' path='/' />
         <section className="record-nav-con">
           <nav className="record-nav">

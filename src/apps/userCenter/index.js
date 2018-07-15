@@ -9,10 +9,13 @@ export default class UserCenter extends Component {
     }
     render() {
         return (
-            <main className='usercenter-container'>
+            <main className='pdv-usercenter'>
                 <PublicHeader title="用户中心" record />
                 <article className="context-con">
-
+                     <p>积分：1000</p>
+                     <p>我的收藏</p>
+                     <p>我喜欢的</p>
+                     <p>个性设置</p>
                 </article>
             </main>
         )

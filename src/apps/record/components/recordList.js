@@ -42,8 +42,8 @@ class RecordList extends Component{
 
   render(){
     return (
-      <div>
-        <ul className="record-list-con">
+      <div className="pdv-record-record-list">
+        <ul>
         {
           this.state.recordData.map((item, index) => {
             return <li className="record-item" key={index}>

@@ -85,8 +85,7 @@ class Home extends Component {
     }
     this.setState({
       alertStatus: true,
-      alertTip,
-      loading:true
+      alertTip
     })
   }
 
@@ -130,7 +129,7 @@ class Home extends Component {
   render() {
 
     return (
-      <main className="home-container">
+      <main className="pdv-home">
         <PublicHeader title='首页' record />
         <p className="common-title">请录入您的信息</p>
         <form className="home-form">
@@ -185,6 +184,5 @@ export default connect(state => ({
     saveFormData,
     saveImg,
     clearData,
-    clearSelected,
-    handleLoading
+    clearSelected
   })(Home);
