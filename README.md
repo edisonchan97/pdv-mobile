@@ -79,6 +79,9 @@ npm install less-loader --save-dev
 ```sh
 npm install less --save-dev
 ```
+```sh
+npm install classnames --save
+```
 ## 五、修改config文件夹中的配置文件
 ```js
 const paths = require('./paths');
