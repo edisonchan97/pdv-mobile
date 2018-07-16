@@ -82,6 +82,9 @@ npm install less --save-dev
 ```sh
 npm install classnames --save
 ```
+```sh
+npm install qs --save
+```
 ## 五、修改config文件夹中的配置文件
 ```js
 const paths = require('./paths');
