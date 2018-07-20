@@ -107,7 +107,8 @@ module.exports = {
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
       '@': resolve('src'),//--为了以后import组件方便，将src目录取别名为@
-      'pdv':resolve('src/components')
+      'pdv':resolve('src/components'),
+      'pdv-utils':resolve('src/utils')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).

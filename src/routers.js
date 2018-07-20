@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { HashRouter, Switch, Route, Redirect, BrowserRouter } from 'react-router-dom';
 import asyncComponent from '@/utils/asyncComponent';
-
-import home from "@/apps/home/index";
+//import BaseComponent from './layout/baseLayout';
+//import home from "@/apps/home/index";
+const home = asyncComponent(() => import("@/apps/home/index"));
 const record = asyncComponent(() => import("@/apps/record/index"));
 const helpcenter = asyncComponent(() => import("@/apps/helpcenter/index"));
 const production = asyncComponent(() => import("@/apps/production/index"));
@@ -15,16 +16,16 @@ export default class RouteConfig extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Switch>
-          <Route path="/pdv-mobile" exact component={home} />
-          <Route path="/pdv-mobile/record" component={record} />
-          <Route path="/pdv-mobile/helpcenter" component={helpcenter} />
-          <Route path="/pdv-mobile/production" component={production} />
-          <Route path="/pdv-mobile/balance" component={balance} />
-          <Route path="/pdv-mobile/login" component={login} />
-          <Route path="/pdv-mobile/userCenter" component={userCenter} />
-          <Redirect to="/pdv-mobile" />
-        </Switch>
+          <Switch>
+            <Route path="/pdv-mobile/index" exact component={home} />
+            <Route path="/pdv-mobile/record" component={record} />
+            <Route path="/pdv-mobile/helpcenter" component={helpcenter} />
+            <Route path="/pdv-mobile/production" component={production} />
+            <Route path="/pdv-mobile/balance" component={balance} />
+            <Route path="/pdv-mobile/login" component={login} />
+            <Route path="/pdv-mobile/userCenter" component={userCenter} />
+            <Redirect to="/pdv-mobile/index" />
+          </Switch>
       </BrowserRouter>
     )
   }

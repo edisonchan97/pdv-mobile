@@ -13,12 +13,13 @@ import envconfig from '@/envconfig/envconfig';
  * @return {Promise}
  * 其他更多拓展参看axios文档后 自行拓展
  * 注意：params中的数据会覆盖method url 参数，所以如果指定了这2个参数则不需要在params中带入
+ * 当接口返回token错误时跳转到登录页
 */
 
 export default class Server {
-  axios(method, url, params){
+  axios(method, url, params) {
     return new Promise((resolve, reject) => {
-      if(typeof params !== 'object') params = {};
+      if (typeof params !== 'object') params = {};
       let _option = params;
       _option = {
         method,
@@ -29,18 +30,18 @@ export default class Server {
         data: null,
         headers: null,
         withCredentials: true, //是否携带cookies发起请求
-        validateStatus:(status)=>{
-            return status >= 200 && status < 300;
+        validateStatus: (status) => {
+          return status >= 200 && status < 300;
         },
         ...params,
       }
       axios.request(_option).then(res => {
         resolve(typeof res.data === 'object' ? res.data : JSON.parse(res.data))
-      },error => {
-        if(error.response){
-            reject(error.response.data)
-        }else{
-            reject(error)
+      }, error => {
+        if (error.response) {
+          reject(error.response.data)
+        } else {
+          reject(error)
         }
       })
     })
