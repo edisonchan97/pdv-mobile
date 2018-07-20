@@ -85,6 +85,9 @@ npm install classnames --save
 ```sh
 npm install qs --save
 ```
+```sh
+npm i mockjs --save-dev
+```
 ## 五、修改config文件夹中的配置文件
 ```js
 const paths = require('./paths');

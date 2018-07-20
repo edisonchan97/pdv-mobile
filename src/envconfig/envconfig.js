@@ -9,5 +9,5 @@ if(process.env.NODE_ENV === 'development'){
   baseURL = '//api.cangdu.org';
 }
 
-
+baseURL=''
 export default {imgUrl, baseURL}

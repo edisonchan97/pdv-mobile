@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
-import {PublicHeader} from 'pdv';
+import { PublicHeader } from 'pdv';
 import { is, fromJS } from 'immutable';
 import './style.less';
-
+import './mock';
+import API from './api';
 export default class HelpCenter extends Component {
 
-  shouldComponentUpdate(nextProps, nextState){
+  shouldComponentUpdate(nextProps, nextState) {
     return !is(fromJS(this.props), fromJS(nextProps)) || !is(fromJS(this.state), fromJS(nextState))
   }
-
-  render(){
+  mock = async () => {
+    let response = await API.getMockData();//使用mock
+    console.log(response);
+  }
+  componentDidMount() {
+    this.mock();
+  }
+  render() {
     return (
       <main className='pdv-helpcenter page'>
         <PublicHeader title="帮助中心" record />
